@@ -6,7 +6,7 @@ import schemaTypes from './schema'
 export default defineConfig({
   name: 'fenghuang-cms',
   title: 'Panel FENGHUANG',
-  projectId: 'TU_PROJECT_ID', // Se genera en el paso de registro
+  projectId: 'w37xypzn', // Se genera en el paso de registro
   dataset: 'production',
 
   plugins: [
