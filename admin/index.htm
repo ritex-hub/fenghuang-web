@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administración - FENGHUANG</title>
+    <title>Panel FENGHUANG</title>
+    <style>
+      html, body, #sanity { height: 100%; margin: 0; padding: 0; }
+    </style>
 </head>
-<body style="margin: 0; padding: 0;">
+<body>
     <div id="sanity"></div>
     <script type="module">
-      import { renderStudio } from 'https://esm.sh/sanity@3?bundle'
-      import config from '../sanity.config.js'
+      import { renderStudio, defineConfig, deskTool } from 'https://esm.sh/sanity@3.28.0?bundle'
+
+      const config = defineConfig({
+        name: 'fenghuang-cms',
+        title: 'Panel FENGHUANG',
+        projectId: 'w37xypzn',
+        dataset: 'production',
+        plugins: [deskTool()],
+        schema: {
+          types: [
+            {
+              name: 'paginaInicio',
+              type: 'document',
+              title: 'Administración Página Inicio',
+              fields: [
+                { name: 'tituloHero', type: 'string', title: 'Título Principal' },
+                { name: 'subtituloHero', type: 'text', title: 'Descripción Principal' },
+                { name: 'whatsappTelefono', type: 'string', title: 'Teléfono WhatsApp' }
+              ]
+            }
+          ]
+        }
+      })
 
       renderStudio(document.getElementById('sanity'), config)
     </script>
