@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FENGHUANG - Servicios Técnicos Especializados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --fenghuang-blue: #0088cc;
+            --fenghuang-dark: #005580;
+            --tech-dark: #0f172a;
+            --steel-gray: #1e293b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --accent-green: #25d366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light-bg); color: var(--steel-gray); line-height: 1.6; }
+
+        /* NAV */
+        header { background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; padding: 0.8rem 2rem; }
+        .logo img { height: 55px; object-fit: contain; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--steel-gray); font-weight: 600; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); margin-top: 75px; padding: 0 1rem;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; color: #cbd5e1; }
+        .btn { padding: 0.9rem 2.2rem; background: var(--fenghuang-blue); color: var(--white); border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; }
+
+        /* SECCIONES */
+        section { padding: 5rem 2rem; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--tech-dark); margin-bottom: 3rem; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--fenghuang-blue); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* GRID SERVICIOS */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 1.5rem; }
+        .card-body h3 { color: var(--fenghuang-dark); margin-bottom: 0.5rem; }
+
+        /* FOOTER & WA */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--accent-green); color: white; border-radius: 50px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        footer { background: var(--tech-dark); color: #94a3b8; text-align: center; padding: 2rem; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><img src="logo.png" alt="FENGHUANG Logo"></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div>
+            <h1>FENGHUANG</h1>
+            <p>Servicios Técnicos Especializados en Elevadores, Escaleras Mecánicas, Automatización y Mantenimiento Industrial y Comercial.</p>
+            <a href="https://wa.me/525524142002" class="btn"><i class="fab fa-whatsapp"></i> Solicitar Cotización</a>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1574958269340-fa927503f3dd?auto=format&fit=crop&w=800&q=80" alt="Elevadores">
+                <div class="card-body">
+                    <h3>Elevadores y Escaleras Mecánicas</h3>
+                    <p>Montaje, mantenimiento preventivo, correctivo y modernización de transporte vertical.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Tarjetas Electrónicas">
+                <div class="card-body">
+                    <h3>Reparación de Tarjetas Electrónicas</h3>
+                    <p>Reparación de tarjetas de control de elevadores, equipos CNC y drives AC/CD a nivel componente.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Climatización">
+                <div class="card-body">
+                    <h3>Aire Acondicionado e Integración</h3>
+                    <p>Instalación y mantenimiento de climatización, paneles solares y herrería industrial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/525524142002" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <footer>
+        <p>&copy; 2026 FENGHUANG - Servicios Técnicos Especializados. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
