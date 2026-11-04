@@ -36,14 +36,15 @@
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--fh-bg);
-            /* Marca de agua institucional FENGHUANG en el fondo */
+            /* Marca de agua institucional FENGHUANG adaptable */
             background-image: url('PRESENTACION FENGHUANG.pdf-image-002.png');
             background-repeat: no-repeat;
-            background-position: right top;
+            background-position: right 5% top 180px;
             background-attachment: fixed;
-            background-size: 750px auto;
+            background-size: 650px auto;
             color: var(--fh-text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, .font-heading {
@@ -54,13 +55,13 @@
         .top-bar {
             background-color: var(--fh-primary-dark);
             color: #94a3b8;
-            padding: 9px 24px;
-            font-size: 0.82rem;
+            padding: 8px 16px;
+            font-size: 0.8rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             border-bottom: 2px solid var(--fh-cyan);
             position: relative;
             z-index: 1001;
@@ -90,21 +91,23 @@
         .nav-inner {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 10px 24px;
+            padding: 10px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
 
         .brand-link {
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
+            flex-shrink: 0;
         }
 
         .brand-logo-img {
-            height: 52px;
+            height: 48px;
+            max-width: 200px;
             width: auto;
             object-fit: contain;
         }
@@ -112,14 +115,15 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 18px;
+            gap: 16px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-menu a {
             color: var(--fh-primary);
             text-decoration: none;
-            font-size: 0.86rem;
+            font-size: 0.84rem;
             font-weight: 600;
             transition: color 0.2s;
         }
@@ -131,13 +135,14 @@
         .btn-header-quote {
             background-color: var(--fh-cyan);
             color: #ffffff !important;
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: 4px;
             font-weight: 700 !important;
             text-transform: uppercase;
-            font-size: 0.8rem !important;
+            font-size: 0.78rem !important;
             letter-spacing: 0.03em;
             transition: background 0.2s;
+            white-space: nowrap;
         }
 
         .btn-header-quote:hover {
@@ -146,11 +151,11 @@
 
         /* 3. Hero Interior */
         .page-hero {
-            background: linear-gradient(135deg, rgba(6, 21, 39, 0.92) 0%, rgba(11, 34, 64, 0.85) 100%),
+            background: linear-gradient(135deg, rgba(6, 21, 39, 0.93) 0%, rgba(11, 34, 64, 0.88) 100%),
                         url('https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
             color: #ffffff;
             text-align: center;
-            padding: 70px 20px 65px;
+            padding: 60px 16px 50px;
             border-bottom: 3px solid var(--fh-cyan);
         }
 
@@ -164,41 +169,41 @@
             background: rgba(0, 159, 227, 0.18);
             color: var(--fh-cyan);
             border: 1px solid rgba(0, 159, 227, 0.35);
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 50px;
-            font-size: 0.78rem;
+            font-size: 0.74rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .page-hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             line-height: 1.25;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .page-hero p {
             color: #cbd5e1;
-            font-size: 1.05rem;
+            font-size: 1rem;
             max-width: 780px;
-            margin: 0 auto 26px auto;
+            margin: 0 auto 24px auto;
         }
 
         .hero-btn {
             background-color: #22c55e;
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 28px;
+            padding: 12px 26px;
             border-radius: 4px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             text-transform: uppercase;
             box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
             transition: background 0.2s, transform 0.2s;
@@ -209,37 +214,48 @@
             transform: translateY(-2px);
         }
 
-        /* 4. Barra de Enlaces de Anclaje de Servicios */
+        /* 4. Barra de Enlaces de Anclaje de Servicios (Horizontal Scroll en móvil) */
         .category-nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(6px);
             border-bottom: 1px solid var(--fh-border);
-            padding: 12px 20px;
+            padding: 10px 16px;
             box-shadow: var(--shadow-subtle);
             position: sticky;
-            top: 73px;
+            top: 68px;
             z-index: 900;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
         }
 
         .category-nav-inner {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 8px;
+            width: max-content;
+        }
+
+        @media (min-width: 1100px) {
+            .category-nav-inner {
+                justify-content: center;
+                width: 100%;
+            }
         }
 
         .cat-chip {
             color: var(--fh-primary);
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 20px;
             border: 1px solid var(--fh-border);
             background: #ffffff;
             transition: all 0.2s;
+            display: inline-block;
         }
 
         .cat-chip:hover {
@@ -252,13 +268,13 @@
         .main-content {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 50px 16px;
             position: relative;
         }
 
         .services-section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .services-section-title .section-tag {
@@ -272,7 +288,7 @@
         }
 
         .services-section-title h2 {
-            font-size: 2.1rem;
+            font-size: 1.95rem;
             font-weight: 800;
             color: var(--fh-primary);
         }
@@ -281,14 +297,14 @@
             color: var(--fh-text-muted);
             max-width: 720px;
             margin: 10px auto 0;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
         /* Cuadrícula de Servicios */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 26px;
         }
 
         .service-card {
@@ -303,7 +319,7 @@
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
 
@@ -322,32 +338,32 @@
         }
 
         .service-card:hover .service-card-media img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
 
         .service-badge {
             position: absolute;
-            top: 14px;
-            left: 14px;
+            top: 12px;
+            left: 12px;
             background-color: var(--fh-primary);
             color: #ffffff;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 4px 10px;
+            padding: 4px 9px;
             border-radius: 3px;
             border-left: 3px solid var(--fh-cyan);
         }
 
         .service-card-content {
-            padding: 24px;
+            padding: 22px 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .service-card-content h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--fh-primary);
             font-weight: 700;
             margin-bottom: 10px;
@@ -355,22 +371,22 @@
         }
 
         .service-card-content p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--fh-text-muted);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             line-height: 1.55;
         }
 
         .service-feature-list {
             list-style: none;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             flex-grow: 1;
             border-top: 1px dashed var(--fh-border);
             padding-top: 14px;
         }
 
         .service-feature-list li {
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             color: var(--fh-text-dark);
             padding: 5px 0;
             display: flex;
@@ -381,23 +397,24 @@
         .service-feature-list li::before {
             content: "■";
             color: var(--fh-cyan);
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             margin-top: 4px;
+            flex-shrink: 0;
         }
 
         .service-card-footer {
             border-top: 1px solid var(--fh-border);
-            padding-top: 16px;
+            padding-top: 14px;
         }
 
         .btn-card-quote {
             background-color: var(--fh-primary);
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 10px 16px;
+            padding: 10px 14px;
             border-radius: 4px;
             transition: background 0.2s;
             display: block;
@@ -413,31 +430,31 @@
             background: #ffffff;
             border-top: 1px solid var(--fh-border);
             border-bottom: 1px solid var(--fh-border);
-            padding: 55px 24px;
+            padding: 50px 16px;
         }
 
         .assurance-inner {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 26px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
         }
 
         .assurance-item {
             border-left: 3px solid var(--fh-cyan);
-            padding-left: 16px;
+            padding-left: 14px;
         }
 
         .assurance-item h4 {
             color: var(--fh-primary);
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .assurance-item p {
-            font-size: 0.86rem;
+            font-size: 0.84rem;
             color: var(--fh-text-muted);
         }
 
@@ -445,28 +462,28 @@
         .cta-section {
             background-color: var(--fh-primary);
             color: #ffffff;
-            padding: 70px 24px;
+            padding: 60px 16px;
         }
 
         .cta-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
             align-items: center;
         }
 
         .cta-info h3 {
-            font-size: 1.85rem;
-            margin-bottom: 14px;
+            font-size: 1.75rem;
+            margin-bottom: 12px;
             color: #ffffff;
         }
 
         .cta-info p {
             color: #cbd5e1;
-            font-size: 0.95rem;
-            margin-bottom: 22px;
+            font-size: 0.92rem;
+            margin-bottom: 18px;
             line-height: 1.6;
         }
 
@@ -475,12 +492,12 @@
         }
 
         .cta-list li {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #f1f5f9;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .cta-list li span {
@@ -491,22 +508,22 @@
         .cta-card {
             background: #ffffff;
             color: var(--fh-text-dark);
-            padding: 32px 28px;
+            padding: 28px 22px;
             border-radius: 6px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             text-align: center;
         }
 
         .cta-card h4 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--fh-primary);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .cta-card p {
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: var(--fh-text-muted);
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
 
         .btn-whatsapp-cta {
@@ -514,11 +531,11 @@
             background-color: #22c55e;
             color: #ffffff;
             text-decoration: none;
-            padding: 13px;
+            padding: 12px;
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             transition: background 0.2s;
         }
 
@@ -529,13 +546,13 @@
         /* Botón WhatsApp Flotante */
         .whatsapp-float {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 20px;
+            right: 20px;
             background-color: #25d366;
             color: white;
             border-radius: 50%;
-            width: 58px;
-            height: 58px;
+            width: 56px;
+            height: 56px;
             box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
             display: flex;
             align-items: center;
@@ -550,8 +567,8 @@
         }
 
         .whatsapp-float svg {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             fill: white;
         }
 
@@ -559,17 +576,92 @@
         footer {
             background-color: var(--fh-primary-dark);
             color: #94a3b8;
-            padding: 30px 24px;
+            padding: 26px 16px;
             text-align: center;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             border-top: 3px solid var(--fh-cyan);
         }
 
-        @media (max-width: 900px) {
-            .nav-menu { display: none; }
-            .page-hero h1 { font-size: 2rem; }
-            .category-nav { display: none; }
-            body { background-size: 400px auto; }
+        /* REGLAS ESPECÍFICAS PARA MÓVILES (Responsividad y Marca de Agua) */
+        @media (max-width: 768px) {
+            body {
+                /* Fondo visible y centrado en pantallas móviles */
+                background-image: url('PRESENTACION FENGHUANG.pdf-image-002.png');
+                background-position: center 320px;
+                background-size: 92% auto;
+                background-attachment: scroll;
+            }
+
+            .top-bar {
+                font-size: 0.74rem;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .nav-menu {
+                display: none; /* Simplifica la barra superior en pantallas pequeñas */
+            }
+
+            .nav-inner {
+                padding: 8px 14px;
+            }
+
+            .brand-logo-img {
+                height: 42px;
+                max-width: 170px;
+            }
+
+            .page-hero {
+                padding: 45px 14px 40px;
+            }
+
+            .page-hero h1 {
+                font-size: 1.65rem;
+                line-height: 1.25;
+            }
+
+            .page-hero p {
+                font-size: 0.9rem;
+            }
+
+            .category-nav {
+                top: 60px;
+                padding: 8px 12px;
+            }
+
+            .cat-chip {
+                font-size: 0.74rem;
+                padding: 5px 10px;
+            }
+
+            .main-content {
+                padding: 35px 12px;
+            }
+
+            .services-section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr; /* Una columna para visualización táctil */
+                gap: 20px;
+            }
+
+            .service-card-media {
+                height: 195px;
+            }
+
+            .service-card-content {
+                padding: 18px 16px;
+            }
+
+            .service-card-content h3 {
+                font-size: 1.15rem;
+            }
+
+            .cta-info h3 {
+                font-size: 1.45rem;
+            }
         }
     </style>
 </head>
@@ -578,10 +670,10 @@
     <!-- Franja Superior de Cobertura -->
     <div class="top-bar">
         <div>
-            <span>📍 <strong>Cobertura Oficial:</strong> Servicios Técnicos y Visitas en toda la República Mexicana</span>
+            <span>📍 <strong>Cobertura Oficial:</strong> Servicios Técnicos y Visitas en toda la República Mexicana[cite: 35]</span>
         </div>
         <div>
-            <span>Servicio de Emergencia 24/7 | <a href="https://wa.me/525500000000" target="_blank">Contactar Asesor</a></span>
+            <span>Servicio de Emergencia 24/7[cite: 28] | <a href="https://wa.me/525500000000" target="_blank">Contactar Asesor</a></span>
         </div>
     </div>
 
@@ -603,20 +695,21 @@
                     <li><a href="https://wa.me/525500000000" class="btn-header-quote">Cotizar Sin Costo</a></li>
                 </ul>
             </nav>
+            <a href="https://wa.me/525500000000" class="btn-header-quote" style="display: inline-block;">Cotizar</a>
         </div>
     </header>
 
     <!-- Hero Interior Estilo Sinergman -->
     <section class="page-hero">
         <div class="page-hero-inner">
-            <span class="hero-badge">Línea con Alta Tecnología de Origen Europeo</span>
+            <span class="hero-badge">Línea con Alta Tecnología de Origen Europeo[cite: 9]</span>
             <h1>Catálogo de Servicios Técnicos Especializados</h1>
-            <p>Damos solución a las particularidades de tu proyecto con las más altas prestaciones y un elevado nivel de adaptabilidad, respaldados por más de 15 años de experiencia.</p>
-            <a href="https://wa.me/525500000000" class="hero-btn">Solicitar Cotización Sin Costo</a>
+            <p>Damos solución a las particularidades de tu proyecto con las más altas prestaciones y un elevado nivel de adaptabilidad, respaldados por más de 15 años de experiencia[cite: 1].</p>
+            <a href="https://wa.me/525500000000" class="hero-btn">Solicitar Cotización Sin Costo[cite: 34]</a>
         </div>
     </section>
 
-    <!-- Barra de Navegación Rápida por División Técnica -->
+    <!-- Barra de Navegación Rápida por División Técnica (Desplazable en móviles) -->
     <nav class="category-nav">
         <div class="category-nav-inner">
             <a href="#elevadores" class="cat-chip">🛗 Elevadores de Pasajeros</a>
@@ -634,28 +727,28 @@
     <!-- Contenido Principal: Rejilla de Servicios con Fotos Coincidentes -->
     <main class="main-content">
         <div class="services-section-title">
-            <span class="section-tag">Ingeniería & Mantenimiento Industrial y Comercial</span>
+            <span class="section-tag">Ingeniería & Mantenimiento Industrial y Comercial[cite: 29]</span>
             <h2>Nuestras Soluciones Técnicas</h2>
             <p>Catálogo técnico completo para transporte vertical, infraestructura electromecánica, automatización y seguridad estructural.</p>
         </div>
 
         <div class="services-grid">
 
-            <!-- 1. Elevadores de Pasajeros (Foto de ascensor moderno en acero inox y cristal) -->
+            <!-- 1. Elevadores de Pasajeros (Cabina de acero inoxidable y botonera moderna) -->
             <article class="service-card" id="elevadores">
                 <div class="service-card-media">
                     <span class="service-badge">División Central</span>
-                    <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=700&q=80" alt="Ascensores de pasajeros MRL Gearless">
+                    <img src="https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=800&q=80" alt="Cabina de ascensor de pasajeros en acero inoxidable">
                 </div>
                 <div class="service-card-content">
                     <h3>Ascensores Residenciales, Comerciales e Industriales</h3>
-                    <p>Ascensores de alta gama para sectores residencial, comercial, hotelero, hospitalario e industrial. Modelos Gearless sin cuarto de máquinas y sistemas hidráulicos.</p>
+                    <p>Ascensores de alta gama para sectores residencial, comercial, hotelero, hospitalario e industrial[cite: 7, 9]. Modelos Gearless sin cuarto de máquinas y sistemas hidráulicos[cite: 7, 9].</p>
                     <ul class="service-feature-list">
-                        <li>Modelos MRL Gearless MP GO sin sala de máquinas</li>
-                        <li>Ascensores hidráulicos compactos Pro-Eco de bajo ruido</li>
-                        <li>Elevadores Homelift para viviendas y edificios de pocos niveles</li>
-                        <li>Certificación energética Nivel A según clasificación VDI</li>
-                        <li>Cortinas infrarrojas y rescate automático de pasajeros</li>
+                        <li>Modelos MRL Gearless MP GO sin sala de máquinas[cite: 7, 9]</li>
+                        <li>Ascensores hidráulicos compactos Pro-Eco de bajo ruido[cite: 4, 7, 9]</li>
+                        <li>Elevadores Homelift para viviendas y edificios de pocos niveles[cite: 7]</li>
+                        <li>Certificación energética Nivel A según clasificación VDI[cite: 9]</li>
+                        <li>Cortinas infrarrojas y rescate automático de pasajeros[cite: 4]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Ascensor</a>
@@ -663,21 +756,21 @@
                 </div>
             </article>
 
-            <!-- 2. Escaleras Mecánicas y Rampas (Foto de escaleras eléctricas en centro comercial) -->
+            <!-- 2. Escaleras Mecánicas y Rampas (Escaleras eléctricas continuas con peldaños de aluminio) -->
             <article class="service-card" id="escaleras">
                 <div class="service-card-media">
                     <span class="service-badge">Transporte Masivo</span>
-                    <img src="https://images.unsplash.com/photo-1519642918688-7e43b19245d8?auto=format&fit=crop&w=700&q=80" alt="Escaleras eléctricas y rampas de transporte masivo">
+                    <img src="https://images.unsplash.com/photo-1555529771-7888783a18d3?auto=format&fit=crop&w=800&q=80" alt="Escaleras mecánicas continuas y andenes móviles">
                 </div>
                 <div class="service-card-content">
                     <h3>Escaleras Eléctricas, Rampas y Andenes Móviles</h3>
-                    <p>Sistemas de transporte vertical masivo diseñados para movilidad continua y fiable en aeropuertos, centros comerciales y edificios públicos.</p>
+                    <p>Sistemas de transporte vertical masivo diseñados para movilidad continua y fiable en aeropuertos, centros comerciales y edificios públicos[cite: 22].</p>
                     <ul class="service-feature-list">
-                        <li>Velocidad constante de 0.50 m/s con sistema de ahorro de energía</li>
-                        <li>Ancho de peldaño disponible de 600 mm, 900 mm y 1000 a 1200 mm</li>
-                        <li>Motorreductor de transmisión de doble cadena de alta durabilidad</li>
-                        <li>Peldaños de aluminio y balaustrada en vidrio templado</li>
-                        <li>Rampas para acceso con carritos de autoservicio</li>
+                        <li>Velocidad constante de 0.50 m/s con sistema de ahorro de energía[cite: 22]</li>
+                        <li>Ancho de peldaño disponible de 600 mm, 900 mm y 1000 a 1200 mm[cite: 22]</li>
+                        <li>Motorreductor de transmisión de doble cadena de alta durabilidad[cite: 22]</li>
+                        <li>Peldaños de aluminio y balaustrada en vidrio templado[cite: 22]</li>
+                        <li>Rampas para acceso con carritos de autoservicio[cite: 22]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Escalera o Rampa</a>
@@ -685,21 +778,21 @@
                 </div>
             </article>
 
-            <!-- 3. Accesibilidad Universal (Foto de plataforma y accesibilidad vertical) -->
+            <!-- 3. Accesibilidad Universal (Silla salvaescaleras montada en barandal de peldaños) -->
             <article class="service-card" id="accesibilidad">
                 <div class="service-card-media">
                     <span class="service-badge">Accesibilidad</span>
-                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80" alt="Plataformas de accesibilidad y sillas salvaescaleras">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Sillas y plataformas salvaescaleras">
                 </div>
                 <div class="service-card-content">
                     <h3>Plataformas Salvaescaleras y Grúas PoolLift</h3>
-                    <p>Soluciones para personas con movilidad reducida sin necesidad de cerramientos autoportantes ni modificaciones invasivas a la estructura del inmueble.</p>
+                    <p>Soluciones para personas con movilidad reducida sin necesidad de cerramientos autoportantes ni modificaciones invasivas a la estructura del inmueble[cite: 3, 12].</p>
                     <ul class="service-feature-list">
-                        <li>Plataformas ECA CB y CA con capacidad de 280 kg</li>
-                        <li>Plataformas inclinadas salvaescaleras de 225 a 300 kg</li>
-                        <li>Sillas salvaescaleras con motor autónomo a batería</li>
-                        <li>Grúas para albercas ECA PoolLift, PoolDiver y HSGL-1</li>
-                        <li>Cumplimiento de normativas de accesibilidad y Norma EN 81</li>
+                        <li>Plataformas ECA CB y CA con capacidad de 280 kg[cite: 3]</li>
+                        <li>Plataformas inclinadas salvaescaleras de 225 a 300 kg[cite: 5]</li>
+                        <li>Sillas salvaescaleras con motor autónomo a batería[cite: 5, 12]</li>
+                        <li>Grúas para albercas ECA PoolLift, PoolDiver y HSGL-1[cite: 13, 14, 16]</li>
+                        <li>Cumplimiento de normativas de accesibilidad y Norma EN 81[cite: 4, 5, 6]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Accesibilidad</a>
@@ -707,21 +800,21 @@
                 </div>
             </article>
 
-            <!-- 4. Elevadores de Carga y Parqueo (Foto de nave logística y montacargas) -->
+            <!-- 4. Elevadores de Carga y Parqueo (Elevador montacargas y plataforma automotriz) -->
             <article class="service-card" id="carga">
                 <div class="service-card-media">
                     <span class="service-badge">Carga & Logística</span>
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Elevadores de carga y montacargas">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Montacargas industrial y plataforma de estacionamiento vehicular">
                 </div>
                 <div class="service-card-content">
                     <h3>Montacargas, Minicargas y Parqueo Automatizado</h3>
-                    <p>Transporte vertical de mercancías pesadas, montaplatos de agilización logística y torres verticales de estacionamiento.</p>
+                    <p>Transporte vertical de mercancías pesadas, montaplatos de agilización logística y torres verticales de estacionamiento[cite: 23, 24, 26].</p>
                     <ul class="service-feature-list">
-                        <li>Minicargas de 50 kg a 350 kg para restaurantes, hoteles y bancos</li>
-                        <li>Elevadores de carga industrial pesada de 400 kg a 3000 kg</li>
-                        <li>Montacoches reforzados para vehículos de 3000 kg a 6500 kg</li>
-                        <li>Torres de parqueo vertical carrusel para sedanes y SUV</li>
-                        <li>Parqueo mecanizado de doble nivel para bicicletas y motocicletas</li>
+                        <li>Minicargas de 50 kg a 350 kg para restaurantes, hoteles y bancos[cite: 23]</li>
+                        <li>Elevadores de carga industrial pesada de 400 kg a 3000 kg[cite: 24]</li>
+                        <li>Montacoches reforzados para vehículos de 3000 kg a 6500 kg[cite: 25]</li>
+                        <li>Torres de parqueo vertical carrusel para sedanes y SUV[cite: 26]</li>
+                        <li>Parqueo mecanizado de doble nivel para bicicletas y motocicletas[cite: 27]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Montacargas / Parqueo</a>
@@ -729,21 +822,21 @@
                 </div>
             </article>
 
-            <!-- 5. Electrónica Industrial (Foto de diagnóstico en tarjeta y circuitos integrados) -->
+            <!-- 5. Electrónica Industrial (Reparación de circuitos con microscopio y cautín) -->
             <article class="service-card" id="electronica">
                 <div class="service-card-media">
                     <span class="service-badge">Laboratorio Propio</span>
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Reparación de tarjetas electrónicas industriales a nivel componente">
+                    <img src="https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&w=800&q=80" alt="Diagnóstico y reparación de tarjetas electrónicas a nivel componente">
                 </div>
                 <div class="service-card-content">
                     <h3>Reparación de Tarjetas a Nivel Componente</h3>
-                    <p>Laboratorio especializado en sustitución de circuitos integrados y diagnóstico dinámico de equipos electrónicos de uso industrial.</p>
+                    <p>Laboratorio especializado en sustitución de circuitos integrados y diagnóstico dinámico de equipos electrónicos de uso industrial[cite: 45, 47].</p>
                     <ul class="service-feature-list">
-                        <li>Tarjetas y controles electrónicos de maniobra de elevadores</li>
-                        <li>Tarjetas de control numérico computarizado (CNC) y tornos</li>
-                        <li>Reparación de variadores de frecuencia y drives AC y CD</li>
-                        <li>Mantenimiento a tarjetas de equipo médico especializado</li>
-                        <li>Rediseño y sustitución de módulos con componentes obsoletos</li>
+                        <li>Tarjetas y controles electrónicos de maniobra de elevadores[cite: 46, 47]</li>
+                        <li>Tarjetas de control numérico computarizado (CNC) y tornos[cite: 46, 47]</li>
+                        <li>Reparación de variadores de frecuencia y drives AC y CD[cite: 46]</li>
+                        <li>Mantenimiento a tarjetas de equipo médico especializado[cite: 46]</li>
+                        <li>Rediseño y sustitución de módulos con componentes obsoletos[cite: 47]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Diagnosticar Tarjeta Electrónica</a>
@@ -751,21 +844,21 @@
                 </div>
             </article>
 
-            <!-- 6. Aire Acondicionado y Climatización (Foto de condensadoras industriales y ductos) -->
+            <!-- 6. Aire Acondicionado y Climatización (Unidades condensadoras y ductos industriales en azotea) -->
             <article class="service-card" id="climatizacion">
                 <div class="service-card-media">
                     <span class="service-badge">Climatización HVAC</span>
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" alt="Equipos de aire acondicionado y refrigeración industrial">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Equipos de climatización comercial y cámaras de refrigeración">
                 </div>
                 <div class="service-card-content">
                     <h3>Aire Acondicionado y Cámaras de Refrigeración</h3>
-                    <p>Cálculo de carga térmica, suministro, montaje y pólizas de mantenimiento preventivo y correctivo para evitar sobrecostos eléctricos.</p>
+                    <p>Cálculo de carga térmica, suministro, montaje y pólizas de mantenimiento preventivo y correctivo para evitar sobrecostos eléctricos[cite: 34, 35, 36].</p>
                     <ul class="service-feature-list">
-                        <li>Sistemas de climatización comercial, doméstico e industrial</li>
-                        <li>Mantenimiento preventivo para alargar vida útil y evitar fallas respiratorias</li>
-                        <li>Cámaras frigoríficas de refrigeración y conservación</li>
-                        <li>Ingeniería, montaje, distribución y limpieza de ductos</li>
-                        <li>Venta y suministro de refacciones originales</li>
+                        <li>Sistemas de climatización comercial, doméstico e industrial[cite: 36]</li>
+                        <li>Mantenimiento preventivo para alargar vida útil y evitar fallas respiratorias[cite: 34, 35]</li>
+                        <li>Cámaras frigoríficas de refrigeración y conservación[cite: 36]</li>
+                        <li>Ingeniería, montaje, distribución y limpieza de ductos[cite: 36]</li>
+                        <li>Venta y suministro de refacciones originales[cite: 33]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Solicitar Servicio HVAC</a>
@@ -773,21 +866,21 @@
                 </div>
             </article>
 
-            <!-- 7. Protección Contra Incendios (Foto de tubería y válvulas de red contra incendios) -->
+            <!-- 7. Protección Contra Incendios (Tubería contra incendios roja con manómetros y válvulas) -->
             <article class="service-card" id="incendios">
                 <div class="service-card-media">
                     <span class="service-badge">Normas Oficiales Mexicanas</span>
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=700&q=80" alt="Sistemas contra incendios y red hidráulica">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Red hidráulica contra incendios y bombas">
                 </div>
                 <div class="service-card-content">
                     <h3>Prevención y Protección Contra Incendios</h3>
-                    <p>Ingeniería aplicada a la seguridad y salud en el trabajo, comercial e industrial, en cumplimiento estricto con las Normas Oficiales Mexicanas.</p>
+                    <p>Ingeniería aplicada a la seguridad y salud en el trabajo, comercial e industrial, en cumplimiento estricto con las Normas Oficiales Mexicanas[cite: 31].</p>
                     <ul class="service-feature-list">
-                        <li>Instalación y mantenimiento de redes y sistemas hidráulicos</li>
-                        <li>Venta y recarga de extintores y señalización de seguridad</li>
-                        <li>Mantenimiento preventivo de motores eléctricos y controles de bombeo</li>
-                        <li>Gabinetes para hidrantes, extintores y equipos para brigadistas</li>
-                        <li>Alarmas de seguridad contra humo, fuego y gases</li>
+                        <li>Instalación y mantenimiento de redes y sistemas hidráulicos[cite: 31]</li>
+                        <li>Venta y recarga de extintores y señalización de seguridad[cite: 31]</li>
+                        <li>Mantenimiento preventivo de motores eléctricos y controles de bombeo[cite: 31]</li>
+                        <li>Gabinetes para hidrantes, extintores y equipos para brigadistas[cite: 31]</li>
+                        <li>Alarmas de seguridad contra humo, fuego y gases[cite: 31]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Red Contra Incendios</a>
@@ -795,21 +888,21 @@
                 </div>
             </article>
 
-            <!-- 8. Energía Solar y Eólica (Foto de granja y paneles solares fotovoltaicos) -->
+            <!-- 8. Energía Solar y Eólica (Paneles solares e inversores industriales) -->
             <article class="service-card" id="solar">
                 <div class="service-card-media">
                     <span class="service-badge">Energías Renovables</span>
-                    <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=700&q=80" alt="Sistemas de energía solar fotovoltaica y eólica">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" alt="Paneles solares fotovoltaicos y sistemas eólicos">
                 </div>
                 <div class="service-card-content">
                     <h3>Energía Solar Fotovoltaica y Sistemas Híbridos</h3>
-                    <p>Sistemas híbridos de potencia (Hybrid Power Systems) para garantizar un suministro eléctrico seguro, continuo y no intermitente.</p>
+                    <p>Sistemas híbridos de potencia (Hybrid Power Systems) para garantizar un suministro eléctrico seguro, continuo y no intermitente[cite: 48].</p>
                     <ul class="service-feature-list">
-                        <li>Integración de módulos fotovoltaicos (paneles solares)</li>
-                        <li>Turbinas eólicas de aprovechamiento cinético</li>
-                        <li>Bancos de baterías y controladores de carga</li>
-                        <li>Sistemas de respaldo ininterrumpible UPS y salidas AC/DC</li>
-                        <li>Ingeniería de interconexión y reducción de consumo de red</li>
+                        <li>Integración de módulos fotovoltaicos (paneles solares)[cite: 48]</li>
+                        <li>Turbinas eólicas de aprovechamiento cinético[cite: 48]</li>
+                        <li>Bancos de baterías y controladores de carga[cite: 48]</li>
+                        <li>Sistemas de respaldo ininterrumpible UPS y salidas AC/DC[cite: 48]</li>
+                        <li>Ingeniería de interconexión y reducción de consumo de red[cite: 48]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Proyecto Renovable</a>
@@ -817,21 +910,21 @@
                 </div>
             </article>
 
-            <!-- 9. Equipos de Gimnasio (Foto de área de fuerza y máquinas de gimnasio) -->
+            <!-- 9. Equipos de Gimnasio (Racks de fuerza, barras olímpicas y mancuernas) -->
             <article class="service-card" id="gimnasio">
                 <div class="service-card-media">
                     <span class="service-badge">Mantenimiento Fitness</span>
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Equipos y máquinas de gimnasio comerciales">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Aparatos de fuerza y barras olímpicas de gimnasio">
                 </div>
                 <div class="service-card-content">
                     <h3>Equipos de Gimnasio y Maquinaria Fitness</h3>
-                    <p>Suministro y mantenimiento técnico a equipos mecánicos, electrónicos y peso libre para centros deportivos, hoteles y residencias.</p>
+                    <p>Suministro y mantenimiento técnico a equipos mecánicos, electrónicos y peso libre para centros deportivos, hoteles y residencias[cite: 37, 39].</p>
                     <ul class="service-feature-list">
-                        <li>Máquinas Smith, racks para sentadillas y prensas 45° Leg Press</li>
-                        <li>Caminadoras de motor eléctrico, elípticas y escaleras mecánicas</li>
-                        <li>Bicicletas de spinning, reclinadas y remos de aire</li>
-                        <li>Barras olímpicas con bujes de bronce, mancuernas y discos ahulados</li>
-                        <li>Mantenimiento electromecánico preventivo y ajuste de bandas</li>
+                        <li>Máquinas Smith, racks para sentadillas y prensas 45° Leg Press[cite: 38, 39]</li>
+                        <li>Caminadoras de motor eléctrico, elípticas y escaleras mecánicas[cite: 39]</li>
+                        <li>Bicicletas de spinning, reclinadas y remos de aire[cite: 39]</li>
+                        <li>Barras olímpicas con bujes de bronce, mancuernas y discos ahulados[cite: 40, 41]</li>
+                        <li>Mantenimiento electromecánico preventivo y ajuste de bandas[cite: 39]</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Equipo de Gimnasio</a>
@@ -847,19 +940,19 @@
         <div class="assurance-inner">
             <div class="assurance-item">
                 <h4>+15 Años de Experiencia</h4>
-                <p>Ingenieros especialistas con alta capacidad de adaptabilidad a las particularidades de cada proyecto.</p>
+                <p>Ingenieros especialistas con alta capacidad de adaptabilidad a las particularidades de cada proyecto[cite: 1].</p>
             </div>
             <div class="assurance-item">
                 <h4>Stock de Refacciones</h4>
-                <p>Disponibilidad de componentes con tiempos de entrega competitivos en el mercado.</p>
+                <p>Disponibilidad de componentes con tiempos de entrega competitivos en el mercado[cite: 28].</p>
             </div>
             <div class="assurance-item">
                 <h4>Soporte Técnico 24/7</h4>
-                <p>Cuadrillas capacitadas y flotilla vehicular para atención continua de emergencias.</p>
+                <p>Cuadrillas capacitadas y flotilla vehicular para atención continua de emergencias[cite: 28].</p>
             </div>
             <div class="assurance-item">
                 <h4>Certificación y Normas</h4>
-                <p>Procedimientos bajo Normas Oficiales Mexicanas y estándares de fabricación europea EN 81.</p>
+                <p>Procedimientos bajo Normas Oficiales Mexicanas y estándares de fabricación europea EN 81[cite: 4, 31].</p>
             </div>
         </div>
     </section>
@@ -869,16 +962,16 @@
         <div class="cta-container">
             <div class="cta-info">
                 <h3>Respaldo y Asesoría Técnica Inmediata</h3>
-                <p>Damos solución a las necesidades de modernización, instalación y mantenimiento preventivo de tus equipos. Programa una visita técnica sin compromiso con nuestros especialistas.</p>
+                <p>Damos solución a las necesidades de modernización, instalación y mantenimiento preventivo de tus equipos. Programa una visita técnica sin compromiso con nuestros especialistas[cite: 1, 34].</p>
                 <ul class="cta-list">
-                    <li><span>✔</span> Cobertura de visitas y cotizaciones en toda la República Mexicana</li>
+                    <li><span>✔</span> Cobertura de visitas y cotizaciones en toda la República Mexicana[cite: 34, 35]</li>
                     <li><span>✔</span> Atención telefónica y por WhatsApp disponible de forma ininterrumpida</li>
-                    <li><span>✔</span> Laboratorio especializado para prueba dinámica de tarjetas electrónicas</li>
+                    <li><span>✔</span> Laboratorio especializado para prueba dinámica de tarjetas electrónicas[cite: 45, 47]</li>
                 </ul>
             </div>
             <div class="cta-card">
                 <h4>Solicitar Cotización Sin Costo</h4>
-                <p>Ponte en contacto directo con nuestros ingenieros para evaluar los requerimientos de tu equipo.</p>
+                <p>Ponte en contacto directo con nuestros ingenieros para evaluar los requerimientos de tu equipo[cite: 34].</p>
                 <a href="https://wa.me/525500000000" class="btn-whatsapp-cta" target="_blank">
                     Contactar por WhatsApp
                 </a>
@@ -895,8 +988,8 @@
 
     <!-- Footer Institucional -->
     <footer>
-        <p>&copy; 2026 <strong>FENGHUANG</strong> - Servicios Técnicos Especializados. Todos los derechos reservados.</p>
-        <p style="margin-top: 5px;">Mantenimiento Industrial y Comercial | Cobertura en toda la República Mexicana.</p>
+        <p>&copy; 2026 <strong>FENGHUANG</strong> - Servicios Técnicos Especializados. Todos los derechos reservados[cite: 29].</p>
+        <p style="margin-top: 5px;">Mantenimiento Industrial y Comercial | Cobertura en toda la República Mexicana[cite: 29, 35].</p>
     </footer>
 
 </body>
