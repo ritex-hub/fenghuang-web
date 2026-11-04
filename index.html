@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FENGHUANG | Servicios Técnicos Especializados</title>
-    <meta name="description" content="Servicios integrales en elevadores, escaleras mecánicas, reparación de tarjetas electrónicas a nivel componente, climatización y mantenimiento electromecánico en toda la República Mexicana.">
+    <title>FENGHUANG | Elevadores, Escaleras Mecánicas y Servicios Técnicos</title>
+    <meta name="description" content="Servicios técnicos especializados en elevadores, escaleras mecánicas, reparación de tarjetas electrónicas a nivel componente, climatización y mantenimiento electromecánico en toda la República Mexicana.">
     
     <!-- Fuentes corporativas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,12 @@
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--fh-bg);
+            /* Marca de agua institucional FENGHUANG en el fondo */
+            background-image: url('PRESENTACION FENGHUANG.pdf-image-002.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+            background-size: 750px auto;
             color: var(--fh-text-dark);
             line-height: 1.6;
         }
@@ -56,6 +62,8 @@
             flex-wrap: wrap;
             gap: 10px;
             border-bottom: 2px solid var(--fh-cyan);
+            position: relative;
+            z-index: 1001;
         }
 
         .top-bar strong {
@@ -70,7 +78,8 @@
 
         /* 2. Barra de Navegación */
         header {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--fh-border);
             position: sticky;
             top: 0;
@@ -79,9 +88,9 @@
         }
 
         .nav-inner {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 14px 24px;
+            padding: 10px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -90,41 +99,27 @@
         .brand-link {
             text-decoration: none;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 12px;
         }
 
-        .brand-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--fh-primary);
-            letter-spacing: -0.5px;
-            line-height: 1;
-        }
-
-        .brand-title span {
-            color: var(--fh-cyan);
-        }
-
-        .brand-subtitle {
-            font-size: 0.72rem;
-            color: var(--fh-text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 3px;
+        .brand-logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 18px;
             align-items: center;
         }
 
         .nav-menu a {
             color: var(--fh-primary);
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             font-weight: 600;
             transition: color 0.2s;
         }
@@ -151,7 +146,7 @@
 
         /* 3. Hero Interior */
         .page-hero {
-            background: linear-gradient(135deg, rgba(6, 21, 39, 0.94) 0%, rgba(11, 34, 64, 0.88) 100%),
+            background: linear-gradient(135deg, rgba(6, 21, 39, 0.92) 0%, rgba(11, 34, 64, 0.85) 100%),
                         url('https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
             color: #ffffff;
             text-align: center;
@@ -216,12 +211,13 @@
 
         /* 4. Barra de Enlaces de Anclaje de Servicios */
         .category-nav {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(6px);
             border-bottom: 1px solid var(--fh-border);
             padding: 12px 20px;
             box-shadow: var(--shadow-subtle);
             position: sticky;
-            top: 67px;
+            top: 73px;
             z-index: 900;
         }
 
@@ -230,19 +226,19 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .cat-chip {
             color: var(--fh-primary);
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             padding: 6px 14px;
             border-radius: 20px;
             border: 1px solid var(--fh-border);
-            background: var(--fh-bg);
+            background: #ffffff;
             transition: all 0.2s;
         }
 
@@ -254,9 +250,10 @@
 
         /* 5. Contenedor de Servicios */
         .main-content {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             padding: 60px 24px;
+            position: relative;
         }
 
         .services-section-title {
@@ -290,7 +287,7 @@
         /* Cuadrícula de Servicios */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 30px;
         }
 
@@ -343,7 +340,7 @@
         }
 
         .service-card-content {
-            padding: 26px 24px 22px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -391,9 +388,6 @@
         .service-card-footer {
             border-top: 1px solid var(--fh-border);
             padding-top: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .btn-card-quote {
@@ -403,10 +397,10 @@
             font-size: 0.82rem;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 9px 16px;
+            padding: 10px 16px;
             border-radius: 4px;
             transition: background 0.2s;
-            width: 100%;
+            display: block;
             text-align: center;
         }
 
@@ -447,7 +441,7 @@
             color: var(--fh-text-muted);
         }
 
-        /* 7. Bloque de Contacto Directo y Presupuesto */
+        /* 7. Bloque de Contacto Directo */
         .cta-section {
             background-color: var(--fh-primary);
             color: #ffffff;
@@ -575,6 +569,7 @@
             .nav-menu { display: none; }
             .page-hero h1 { font-size: 2rem; }
             .category-nav { display: none; }
+            body { background-size: 400px auto; }
         }
     </style>
 </head>
@@ -583,19 +578,18 @@
     <!-- Franja Superior de Cobertura -->
     <div class="top-bar">
         <div>
-            <span>📍 <strong>Cobertura Oficial:</strong> Servicios Técnicos y Visitas en toda la República Mexicana[cite: 40]</span>
+            <span>📍 <strong>Cobertura Oficial:</strong> Servicios Técnicos y Visitas en toda la República Mexicana</span>
         </div>
         <div>
-            <span>Servicio de Emergencia 24/7[cite: 33] | <a href="https://wa.me/525500000000" target="_blank">Contactar Asesor</a></span>
+            <span>Servicio de Emergencia 24/7 | <a href="https://wa.me/525500000000" target="_blank">Contactar Asesor</a></span>
         </div>
     </div>
 
-    <!-- Barra de Navegación Institucional -->
+    <!-- Barra de Navegación con Logotipo Oficial -->
     <header>
         <div class="nav-inner">
             <a href="#" class="brand-link">
-                <span class="brand-title">FENG<span>HUANG</span></span>
-                <span class="brand-subtitle">Servicios Técnicos Especializados[cite: 5, 34]</span>
+                <img src="PRESENTACION FENGHUANG.pdf-image-000.png" alt="FENGHUANG Elevadores y Escaleras Mecánicas" class="brand-logo-img">
             </a>
             <nav>
                 <ul class="nav-menu">
@@ -615,10 +609,10 @@
     <!-- Hero Interior Estilo Sinergman -->
     <section class="page-hero">
         <div class="page-hero-inner">
-            <span class="hero-badge">Línea con Alta Tecnología de Origen Europeo[cite: 13]</span>
+            <span class="hero-badge">Línea con Alta Tecnología de Origen Europeo</span>
             <h1>Catálogo de Servicios Técnicos Especializados</h1>
-            <p>Damos solución a las particularidades de tu proyecto con las más altas prestaciones y un elevado nivel de adaptabilidad, respaldados por más de 15 años de experiencia[cite: 5].</p>
-            <a href="https://wa.me/525500000000" class="hero-btn">Solicitar Cotización Sin Costo[cite: 39]</a>
+            <p>Damos solución a las particularidades de tu proyecto con las más altas prestaciones y un elevado nivel de adaptabilidad, respaldados por más de 15 años de experiencia.</p>
+            <a href="https://wa.me/525500000000" class="hero-btn">Solicitar Cotización Sin Costo</a>
         </div>
     </section>
 
@@ -637,31 +631,31 @@
         </div>
     </nav>
 
-    <!-- Contenido Principal: Rejilla de Servicios -->
+    <!-- Contenido Principal: Rejilla de Servicios con Fotos Coincidentes -->
     <main class="main-content">
         <div class="services-section-title">
-            <span class="section-tag">Ingeniería & Mantenimiento Industrial y Comercial[cite: 34]</span>
+            <span class="section-tag">Ingeniería & Mantenimiento Industrial y Comercial</span>
             <h2>Nuestras Soluciones Técnicas</h2>
             <p>Catálogo técnico completo para transporte vertical, infraestructura electromecánica, automatización y seguridad estructural.</p>
         </div>
 
         <div class="services-grid">
 
-            <!-- 1. Elevadores de Pasajeros -->
+            <!-- 1. Elevadores de Pasajeros (Foto de ascensor moderno en acero inox y cristal) -->
             <article class="service-card" id="elevadores">
                 <div class="service-card-media">
                     <span class="service-badge">División Central</span>
-                    <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=700&q=80" alt="Elevadores de Pasajeros">
+                    <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=700&q=80" alt="Ascensores de pasajeros MRL Gearless">
                 </div>
                 <div class="service-card-content">
                     <h3>Ascensores Residenciales, Comerciales e Industriales</h3>
-                    <p>Ascensores de alta gama para sectores residencial, comercial, hotelero, hospitalario e industrial[cite: 11, 13]. Modelos Gearless sin cuarto de máquinas y sistemas hidráulicos[cite: 11, 13].</p>
+                    <p>Ascensores de alta gama para sectores residencial, comercial, hotelero, hospitalario e industrial. Modelos Gearless sin cuarto de máquinas y sistemas hidráulicos.</p>
                     <ul class="service-feature-list">
-                        <li>Modelos MRL Gearless MP GO sin sala de máquinas[cite: 11, 13]</li>
-                        <li>Ascensores hidráulicos compactos Pro-Eco de bajo ruido[cite: 8, 11, 13]</li>
-                        <li>Elevadores Homelift para viviendas y edificios de pocos niveles[cite: 11]</li>
-                        <li>Certificación energética Nivel A según clasificación VDI[cite: 13]</li>
-                        <li>Cortinas infrarrojas y rescate automático de pasajeros[cite: 8]</li>
+                        <li>Modelos MRL Gearless MP GO sin sala de máquinas</li>
+                        <li>Ascensores hidráulicos compactos Pro-Eco de bajo ruido</li>
+                        <li>Elevadores Homelift para viviendas y edificios de pocos niveles</li>
+                        <li>Certificación energética Nivel A según clasificación VDI</li>
+                        <li>Cortinas infrarrojas y rescate automático de pasajeros</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Ascensor</a>
@@ -669,21 +663,21 @@
                 </div>
             </article>
 
-            <!-- 2. Escaleras Mecánicas y Rampas -->
+            <!-- 2. Escaleras Mecánicas y Rampas (Foto de escaleras eléctricas en centro comercial) -->
             <article class="service-card" id="escaleras">
                 <div class="service-card-media">
                     <span class="service-badge">Transporte Masivo</span>
-                    <img src="https://images.unsplash.com/photo-1519642918688-7e43b19245d8?auto=format&fit=crop&w=700&q=80" alt="Escaleras Mecánicas y Rampas">
+                    <img src="https://images.unsplash.com/photo-1519642918688-7e43b19245d8?auto=format&fit=crop&w=700&q=80" alt="Escaleras eléctricas y rampas de transporte masivo">
                 </div>
                 <div class="service-card-content">
                     <h3>Escaleras Eléctricas, Rampas y Andenes Móviles</h3>
-                    <p>Sistemas de transporte vertical masivo diseñados para movilidad continua y fiable en aeropuertos, centros comerciales y edificios públicos[cite: 26].</p>
+                    <p>Sistemas de transporte vertical masivo diseñados para movilidad continua y fiable en aeropuertos, centros comerciales y edificios públicos.</p>
                     <ul class="service-feature-list">
-                        <li>Velocidad constante de 0.50 m/s con sistema de ahorro de energía[cite: 26]</li>
-                        <li>Ancho de peldaño disponible de 600 mm, 900 mm y 1000 a 1200 mm[cite: 26]</li>
-                        <li>Motorreductor de transmisión de doble cadena de alta durabilidad[cite: 26]</li>
-                        <li>Peldaños de aluminio y balaustrada en vidrio templado[cite: 26]</li>
-                        <li>Rampas para acceso con carritos de autoservicio[cite: 26]</li>
+                        <li>Velocidad constante de 0.50 m/s con sistema de ahorro de energía</li>
+                        <li>Ancho de peldaño disponible de 600 mm, 900 mm y 1000 a 1200 mm</li>
+                        <li>Motorreductor de transmisión de doble cadena de alta durabilidad</li>
+                        <li>Peldaños de aluminio y balaustrada en vidrio templado</li>
+                        <li>Rampas para acceso con carritos de autoservicio</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Escalera o Rampa</a>
@@ -691,21 +685,21 @@
                 </div>
             </article>
 
-            <!-- 3. Accesibilidad Universal -->
+            <!-- 3. Accesibilidad Universal (Foto de plataforma y accesibilidad vertical) -->
             <article class="service-card" id="accesibilidad">
                 <div class="service-card-media">
                     <span class="service-badge">Accesibilidad</span>
-                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80" alt="Plataformas Salvaescaleras">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80" alt="Plataformas de accesibilidad y sillas salvaescaleras">
                 </div>
                 <div class="service-card-content">
                     <h3>Plataformas Salvaescaleras y Grúas PoolLift</h3>
-                    <p>Soluciones para personas con movilidad reducida sin necesidad de cerramientos autoportantes ni modificaciones invasivas a la estructura del inmueble[cite: 7, 16].</p>
+                    <p>Soluciones para personas con movilidad reducida sin necesidad de cerramientos autoportantes ni modificaciones invasivas a la estructura del inmueble.</p>
                     <ul class="service-feature-list">
-                        <li>Plataformas ECA CB y CA con capacidad de 280 kg[cite: 7]</li>
-                        <li>Plataformas inclinadas salvaescaleras de 225 a 300 kg[cite: 9]</li>
-                        <li>Sillas salvaescaleras con motor autónomo a batería[cite: 9, 16]</li>
-                        <li>Grúas para albercas ECA PoolLift, PoolDiver y HSGL-1[cite: 17, 18, 20]</li>
-                        <li>Cumplimiento de normativas de accesibilidad y Norma EN 81[cite: 8, 9, 10]</li>
+                        <li>Plataformas ECA CB y CA con capacidad de 280 kg</li>
+                        <li>Plataformas inclinadas salvaescaleras de 225 a 300 kg</li>
+                        <li>Sillas salvaescaleras con motor autónomo a batería</li>
+                        <li>Grúas para albercas ECA PoolLift, PoolDiver y HSGL-1</li>
+                        <li>Cumplimiento de normativas de accesibilidad y Norma EN 81</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Accesibilidad</a>
@@ -713,21 +707,21 @@
                 </div>
             </article>
 
-            <!-- 4. Elevadores de Carga y Parqueo -->
+            <!-- 4. Elevadores de Carga y Parqueo (Foto de nave logística y montacargas) -->
             <article class="service-card" id="carga">
                 <div class="service-card-media">
                     <span class="service-badge">Carga & Logística</span>
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Elevadores de Carga">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Elevadores de carga y montacargas">
                 </div>
                 <div class="service-card-content">
                     <h3>Montacargas, Minicargas y Parqueo Automatizado</h3>
-                    <p>Transporte vertical de mercancías pesadas, montaplatos de agilización logística y torres verticales de estacionamiento[cite: 27, 28, 30].</p>
+                    <p>Transporte vertical de mercancías pesadas, montaplatos de agilización logística y torres verticales de estacionamiento.</p>
                     <ul class="service-feature-list">
-                        <li>Minicargas de 50 kg a 350 kg para restaurantes, hoteles y bancos[cite: 27]</li>
-                        <li>Elevadores de carga industrial pesada de 400 kg a 3000 kg[cite: 28]</li>
-                        <li>Montacoches reforzados para vehículos de 3000 kg a 6500 kg[cite: 29]</li>
-                        <li>Torres de parqueo vertical carrusel para sedanes y SUV[cite: 30]</li>
-                        <li>Parqueo mecanizado de doble nivel para bicicletas y motocicletas[cite: 31]</li>
+                        <li>Minicargas de 50 kg a 350 kg para restaurantes, hoteles y bancos</li>
+                        <li>Elevadores de carga industrial pesada de 400 kg a 3000 kg</li>
+                        <li>Montacoches reforzados para vehículos de 3000 kg a 6500 kg</li>
+                        <li>Torres de parqueo vertical carrusel para sedanes y SUV</li>
+                        <li>Parqueo mecanizado de doble nivel para bicicletas y motocicletas</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Montacargas / Parqueo</a>
@@ -735,21 +729,21 @@
                 </div>
             </article>
 
-            <!-- 5. Electrónica Industrial -->
+            <!-- 5. Electrónica Industrial (Foto de diagnóstico en tarjeta y circuitos integrados) -->
             <article class="service-card" id="electronica">
                 <div class="service-card-media">
                     <span class="service-badge">Laboratorio Propio</span>
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Reparación de Tarjetas Electrónicas">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="Reparación de tarjetas electrónicas industriales a nivel componente">
                 </div>
                 <div class="service-card-content">
                     <h3>Reparación de Tarjetas a Nivel Componente</h3>
-                    <p>Laboratorio especializado en sustitución de circuitos integrados y diagnóstico dinámico de equipos electrónicos de uso industrial[cite: 49, 51].</p>
+                    <p>Laboratorio especializado en sustitución de circuitos integrados y diagnóstico dinámico de equipos electrónicos de uso industrial.</p>
                     <ul class="service-feature-list">
-                        <li>Tarjetas y controles electrónicos de maniobra de elevadores[cite: 50, 51]</li>
-                        <li>Tarjetas de control numérico computarizado (CNC) y tornos[cite: 50, 51]</li>
-                        <li>Reparación de variadores de frecuencia y drives AC y CD[cite: 50]</li>
-                        <li>Mantenimiento a tarjetas de equipo médico especializado[cite: 50]</li>
-                        <li>Rediseño y sustitución de módulos con componentes obsoletos[cite: 51]</li>
+                        <li>Tarjetas y controles electrónicos de maniobra de elevadores</li>
+                        <li>Tarjetas de control numérico computarizado (CNC) y tornos</li>
+                        <li>Reparación de variadores de frecuencia y drives AC y CD</li>
+                        <li>Mantenimiento a tarjetas de equipo médico especializado</li>
+                        <li>Rediseño y sustitución de módulos con componentes obsoletos</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Diagnosticar Tarjeta Electrónica</a>
@@ -757,21 +751,21 @@
                 </div>
             </article>
 
-            <!-- 6. Aire Acondicionado y Climatización -->
+            <!-- 6. Aire Acondicionado y Climatización (Foto de condensadoras industriales y ductos) -->
             <article class="service-card" id="climatizacion">
                 <div class="service-card-media">
                     <span class="service-badge">Climatización HVAC</span>
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" alt="Aire Acondicionado Industrial">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" alt="Equipos de aire acondicionado y refrigeración industrial">
                 </div>
                 <div class="service-card-content">
                     <h3>Aire Acondicionado y Cámaras de Refrigeración</h3>
-                    <p>Cálculo de carga térmica, suministro, montaje y pólizas de mantenimiento preventivo y correctivo para evitar sobrecostos eléctricos[cite: 38, 39, 40].</p>
+                    <p>Cálculo de carga térmica, suministro, montaje y pólizas de mantenimiento preventivo y correctivo para evitar sobrecostos eléctricos.</p>
                     <ul class="service-feature-list">
-                        <li>Sistemas de climatización comercial, doméstico e industrial[cite: 40]</li>
-                        <li>Mantenimiento preventivo para alargar vida útil y evitar fallas respiratorias[cite: 38, 39]</li>
-                        <li>Cámaras frigoríficas de refrigeración y conservación[cite: 40]</li>
-                        <li>Ingeniería, montaje, distribución y limpieza de ductos[cite: 40]</li>
-                        <li>Venta y suministro de refacciones originales[cite: 37]</li>
+                        <li>Sistemas de climatización comercial, doméstico e industrial</li>
+                        <li>Mantenimiento preventivo para alargar vida útil y evitar fallas respiratorias</li>
+                        <li>Cámaras frigoríficas de refrigeración y conservación</li>
+                        <li>Ingeniería, montaje, distribución y limpieza de ductos</li>
+                        <li>Venta y suministro de refacciones originales</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Solicitar Servicio HVAC</a>
@@ -779,21 +773,21 @@
                 </div>
             </article>
 
-            <!-- 7. Protección Contra Incendios -->
+            <!-- 7. Protección Contra Incendios (Foto de tubería y válvulas de red contra incendios) -->
             <article class="service-card" id="incendios">
                 <div class="service-card-media">
                     <span class="service-badge">Normas Oficiales Mexicanas</span>
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=700&q=80" alt="Sistemas Contra Incendios">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=700&q=80" alt="Sistemas contra incendios y red hidráulica">
                 </div>
                 <div class="service-card-content">
                     <h3>Prevención y Protección Contra Incendios</h3>
-                    <p>Ingeniería aplicada a la seguridad y salud en el trabajo, comercial e industrial, en cumplimiento estricto con las Normas Oficiales Mexicanas[cite: 35].</p>
+                    <p>Ingeniería aplicada a la seguridad y salud en el trabajo, comercial e industrial, en cumplimiento estricto con las Normas Oficiales Mexicanas.</p>
                     <ul class="service-feature-list">
-                        <li>Instalación y mantenimiento de redes y sistemas hidráulicos[cite: 35]</li>
-                        <li>Venta y recarga de extintores y señalización de seguridad[cite: 35]</li>
-                        <li>Mantenimiento preventivo de motores eléctricos y controles de bombeo[cite: 35]</li>
-                        <li>Gabinetes para hidrantes, extintores y equipos para brigadistas[cite: 35]</li>
-                        <li>Alarmas de seguridad contra humo, fuego y gases[cite: 35]</li>
+                        <li>Instalación y mantenimiento de redes y sistemas hidráulicos</li>
+                        <li>Venta y recarga de extintores y señalización de seguridad</li>
+                        <li>Mantenimiento preventivo de motores eléctricos y controles de bombeo</li>
+                        <li>Gabinetes para hidrantes, extintores y equipos para brigadistas</li>
+                        <li>Alarmas de seguridad contra humo, fuego y gases</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Red Contra Incendios</a>
@@ -801,21 +795,21 @@
                 </div>
             </article>
 
-            <!-- 8. Energía Solar y Eólica -->
+            <!-- 8. Energía Solar y Eólica (Foto de granja y paneles solares fotovoltaicos) -->
             <article class="service-card" id="solar">
                 <div class="service-card-media">
                     <span class="service-badge">Energías Renovables</span>
-                    <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=700&q=80" alt="Paneles Solares y Energía Eólica">
+                    <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=700&q=80" alt="Sistemas de energía solar fotovoltaica y eólica">
                 </div>
                 <div class="service-card-content">
                     <h3>Energía Solar Fotovoltaica y Sistemas Híbridos</h3>
-                    <p>Sistemas híbridos de potencia (Hybrid Power Systems) para garantizar un suministro eléctrico seguro, continuo y no intermitente[cite: 52].</p>
+                    <p>Sistemas híbridos de potencia (Hybrid Power Systems) para garantizar un suministro eléctrico seguro, continuo y no intermitente.</p>
                     <ul class="service-feature-list">
-                        <li>Integración de módulos fotovoltaicos (paneles solares)[cite: 52]</li>
-                        <li>Turbinas eólicas de aprovechamiento cinético[cite: 52]</li>
-                        <li>Bancos de baterías y controladores de carga[cite: 52]</li>
-                        <li>Sistemas de respaldo ininterrumpible UPS y salidas AC/DC[cite: 52]</li>
-                        <li>Ingeniería de interconexión y reducción de consumo de red[cite: 52]</li>
+                        <li>Integración de módulos fotovoltaicos (paneles solares)</li>
+                        <li>Turbinas eólicas de aprovechamiento cinético</li>
+                        <li>Bancos de baterías y controladores de carga</li>
+                        <li>Sistemas de respaldo ininterrumpible UPS y salidas AC/DC</li>
+                        <li>Ingeniería de interconexión y reducción de consumo de red</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Proyecto Renovable</a>
@@ -823,21 +817,21 @@
                 </div>
             </article>
 
-            <!-- 9. Equipos de Gimnasio -->
+            <!-- 9. Equipos de Gimnasio (Foto de área de fuerza y máquinas de gimnasio) -->
             <article class="service-card" id="gimnasio">
                 <div class="service-card-media">
                     <span class="service-badge">Mantenimiento Fitness</span>
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Equipos de Gimnasio">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Equipos y máquinas de gimnasio comerciales">
                 </div>
                 <div class="service-card-content">
                     <h3>Equipos de Gimnasio y Maquinaria Fitness</h3>
-                    <p>Suministro y mantenimiento técnico a equipos mecánicos, electrónicos y peso libre para centros deportivos, hoteles y residencias[cite: 41, 43].</p>
+                    <p>Suministro y mantenimiento técnico a equipos mecánicos, electrónicos y peso libre para centros deportivos, hoteles y residencias.</p>
                     <ul class="service-feature-list">
-                        <li>Máquinas Smith, racks para sentadillas y prensas 45° Leg Press[cite: 42, 43]</li>
-                        <li>Caminadoras de motor eléctrico, elípticas y escaleras mecánicas[cite: 43]</li>
-                        <li>Bicicletas de spinning, reclinadas y remos de aire[cite: 43]</li>
-                        <li>Barras olímpicas con bujes de bronce, mancuernas y discos ahulados[cite: 44, 45]</li>
-                        <li>Mantenimiento electromecánico preventivo y ajuste de bandas[cite: 43]</li>
+                        <li>Máquinas Smith, racks para sentadillas y prensas 45° Leg Press</li>
+                        <li>Caminadoras de motor eléctrico, elípticas y escaleras mecánicas</li>
+                        <li>Bicicletas de spinning, reclinadas y remos de aire</li>
+                        <li>Barras olímpicas con bujes de bronce, mancuernas y discos ahulados</li>
+                        <li>Mantenimiento electromecánico preventivo y ajuste de bandas</li>
                     </ul>
                     <div class="service-card-footer">
                         <a href="https://wa.me/525500000000" class="btn-card-quote">Cotizar Equipo de Gimnasio</a>
@@ -853,19 +847,19 @@
         <div class="assurance-inner">
             <div class="assurance-item">
                 <h4>+15 Años de Experiencia</h4>
-                <p>Ingenieros especialistas con alta capacidad de adaptabilidad a las particularidades de cada proyecto[cite: 5].</p>
+                <p>Ingenieros especialistas con alta capacidad de adaptabilidad a las particularidades de cada proyecto.</p>
             </div>
             <div class="assurance-item">
                 <h4>Stock de Refacciones</h4>
-                <p>Disponibilidad de componentes con tiempos de entrega competitivos en el mercado[cite: 32].</p>
+                <p>Disponibilidad de componentes con tiempos de entrega competitivos en el mercado.</p>
             </div>
             <div class="assurance-item">
                 <h4>Soporte Técnico 24/7</h4>
-                <p>Cuadrillas capacitadas y flotilla vehicular para atención continua de emergencias[cite: 32].</p>
+                <p>Cuadrillas capacitadas y flotilla vehicular para atención continua de emergencias.</p>
             </div>
             <div class="assurance-item">
                 <h4>Certificación y Normas</h4>
-                <p>Procedimientos bajo Normas Oficiales Mexicanas y estándares de fabricación europea EN 81[cite: 8, 35].</p>
+                <p>Procedimientos bajo Normas Oficiales Mexicanas y estándares de fabricación europea EN 81.</p>
             </div>
         </div>
     </section>
@@ -875,16 +869,16 @@
         <div class="cta-container">
             <div class="cta-info">
                 <h3>Respaldo y Asesoría Técnica Inmediata</h3>
-                <p>Damos solución a las necesidades de modernización, instalación y mantenimiento preventivo de tus equipos. Programa una visita técnica sin compromiso con nuestros especialistas[cite: 5, 38].</p>
+                <p>Damos solución a las necesidades de modernización, instalación y mantenimiento preventivo de tus equipos. Programa una visita técnica sin compromiso con nuestros especialistas.</p>
                 <ul class="cta-list">
-                    <li><span>✔</span> Cobertura de visitas y cotizaciones en toda la República Mexicana[cite: 38, 39]</li>
+                    <li><span>✔</span> Cobertura de visitas y cotizaciones en toda la República Mexicana</li>
                     <li><span>✔</span> Atención telefónica y por WhatsApp disponible de forma ininterrumpida</li>
-                    <li><span>✔</span> Laboratorio especializado para prueba dinámica de tarjetas electrónicas[cite: 49, 51]</li>
+                    <li><span>✔</span> Laboratorio especializado para prueba dinámica de tarjetas electrónicas</li>
                 </ul>
             </div>
             <div class="cta-card">
                 <h4>Solicitar Cotización Sin Costo</h4>
-                <p>Ponte en contacto directo con nuestros ingenieros para evaluar los requerimientos de tu equipo[cite: 38].</p>
+                <p>Ponte en contacto directo con nuestros ingenieros para evaluar los requerimientos de tu equipo.</p>
                 <a href="https://wa.me/525500000000" class="btn-whatsapp-cta" target="_blank">
                     Contactar por WhatsApp
                 </a>
@@ -901,8 +895,8 @@
 
     <!-- Footer Institucional -->
     <footer>
-        <p>&copy; 2026 <strong>FENGHUANG</strong> - Servicios Técnicos Especializados. Todos los derechos reservados[cite: 33].</p>
-        <p style="margin-top: 5px;">Mantenimiento Industrial y Comercial | Cobertura en toda la República Mexicana[cite: 33, 39].</p>
+        <p>&copy; 2026 <strong>FENGHUANG</strong> - Servicios Técnicos Especializados. Todos los derechos reservados.</p>
+        <p style="margin-top: 5px;">Mantenimiento Industrial y Comercial | Cobertura en toda la República Mexicana.</p>
     </footer>
 
 </body>
